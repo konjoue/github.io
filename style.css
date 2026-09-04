@@ -16,6 +16,9 @@ body.dark-mode
 
 body
 {
+    box-sizing: border-box;
+    border: 10px solid black;
+
     font-family: Times New Roman, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);

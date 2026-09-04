@@ -31,31 +31,66 @@ body
 }
 
 .card
-{
-    border: 5px solid black;
+  {
+    width: 60vw;
+    height: 70vh; 
+    box-sizing: border-box; 
 
+    /* Add scrollbars inside the card if content overflows on smaller screens */
+    overflow-y: auto;
+
+    border: 10px solid black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  
     background-color: var(--card-bg);
+
     padding: 2.5rem;
-    border-radius: 12px;
+    padding-top: 1.5rem;
+
+    border-radius: 5px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
     text-align: center;
-    max-width: 400px;
 }
 
-button
+.btn-container 
 {
-    background-color: var(--accent-color);
-    color: #ffffff;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: opacity 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;        
+  margin-top: 1.5rem; 
+  box-sizing: border-box;
 }
 
-button:hover
+.card-btn
+{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: inherit;
+  margin: 0;
+  width: 100%;
+
+  text-decoration: none;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 0.5rem;
+  font-size: 0.95rem;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: opacity 0.2s;
+}
+
+.card-btn:hover
 {
     opacity: 0.9;
 }

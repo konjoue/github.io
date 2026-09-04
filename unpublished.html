@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>unpublished</title>
+        <link rel="stylesheet" href="style.css"> 
+    </head>
+
+    <body>
+        <main class="pg-container" id="pgContainer">
+
+            /* left panel for writing selection */
+            <section class="card selection-card">
+                <h1>unpublished works</h1>
+                <p>select a piece to read</p>
+
+                <div class="btn-container">
+                    <button class="card-btn doc-btn" data-file="essays/Fez.pdf">Fez</button>
+                    <button class="card-btn doc-btn" data-file="essays/K0.pdf">K0</button>
+                    <a href="writing.html" class="card-btn">back to writing</a>
+                    <a href="index.html" class="card-btn">home</a>
+                </div>
+            </section>
+
+            /* right panel for displaying selected writing */
+            <section class="card display-card" id="displaySection">
+                <button class="close-btn" id="closeBtn">X close reader</button>
+                
+                <iframe id="docViewer" src="" title="doc viewer"></iframe>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+
+    </body>
+</html>

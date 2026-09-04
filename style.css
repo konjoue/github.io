@@ -41,6 +41,8 @@ body
 
     border: 10px solid black;
 
+    container-type: size;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,10 +64,10 @@ body
     display: flex;
     flex-direction: column;
 
-    gap: clamp(0.75rem, 2vh, 2rem); /* Adjust the gap between buttons based on screen size */
+    gap: 10cqh; /* Adjust the gap based on card size */
 
     width: 100%;        
-    margin-top: 1.5rem; 
+    margin-top: auto; 
     box-sizing: border-box;
 }
 
@@ -74,11 +76,10 @@ body
     appearance: none;
     -webkit-appearance: none;
 
-    height:clamp(2.25rem, 6vh, 4rem); /* Adjust the height based on screen size */
+    height: 15cqh; /* Adjust the height based on card size */
     
-    font-size: clamp(0.9rem, 1.2vh, 1.2rem); /* Adjust the font size based on screen size */
+    font-size: 2.5cqw; /* Adjust the font size based on card size */
 
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,7 +93,6 @@ body
     color: white;
     border: none;
     padding: 0.8rem 0.5rem;
-    font-size: 0.95rem;
     border-radius: 5px;
     cursor: pointer;
     box-sizing: border-box;

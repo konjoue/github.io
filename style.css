@@ -59,35 +59,44 @@ body
 
 .btn-container 
 {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  width: 100%;        
-  margin-top: 1.5rem; 
-  box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    gap: clamp(0.75rem, 2vh, 2rem); /* Adjust the gap between buttons based on screen size */
+
+    width: 100%;        
+    margin-top: 1.5rem; 
+    box-sizing: border-box;
 }
 
 .card-btn
 {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    appearance: none;
+    -webkit-appearance: none;
 
-  font-family: inherit;
-  margin: 0;
-  width: 100%;
+    height:clamp(2.25rem, 6vh, 4rem); /* Adjust the height based on screen size */
+    
+    font-size: clamp(0.9rem, 1.2vh, 1.2rem); /* Adjust the font size based on screen size */
 
-  text-decoration: none;
-  background-color: var(--accent-color);
-  color: white;
-  border: none;
-  padding: 0.8rem 0.5rem;
-  font-size: 0.95rem;
-  border-radius: 5px;
-  cursor: pointer;
-  box-sizing: border-box;
-  transition: opacity 0.2s;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: inherit;
+    margin: 0;
+    width: 100%;
+
+    text-decoration: none;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 0.5rem;
+    font-size: 0.95rem;
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: opacity 0.2s;
 }
 
 .card-btn:hover

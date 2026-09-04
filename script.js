@@ -33,5 +33,5 @@ if (closeBtn)
     {
         pageContainer.classList.remove('active');
         docViewer.src = '';
-    }
+    });
 }

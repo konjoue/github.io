@@ -138,25 +138,6 @@ body
     position: relative;
 }
 
-/* --------- active display card------------*/
-
-/* move selection over */
-.pg-container.active .card
-{
-    width: 30vw;
-}
-
-.pg-container.active .card.selection-card
-{
-    width: 30vw;
-}
-
-/* show the pdf card */
-.pg-container.active .display-card
-{
-    display: flex;
-}
-
 /* pdf card content */
 #docViewer
 {
@@ -179,3 +160,20 @@ body
     cursor: pointer;
     margin-bottom: 0.5rem;
 }
+
+/* --------- active display card------------*/
+
+/* move selection over */
+#pg-container.active .selection-card
+{
+    width: 30vw;
+}
+
+/* show the pdf card */
+#pg-container.active .display-card
+{
+    display: flex;
+}
+
+
+

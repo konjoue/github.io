@@ -18,7 +18,7 @@ docBtns.forEach(btn =>
 {
     btn.addEventListener('click', () =>
     {
-        const filePath = btn.getAttribute('data-file');
+        const filePath = e.currentTarget.getAttribute('data-file');
         docViewer.src = filePath;
 
         pageContainer.classList.add('active');

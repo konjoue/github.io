@@ -7,8 +7,8 @@ themeToggleBtn.addEventListener('click', () =>
 
 // --------------------- document reader --------------
 // get reader elements
-const pageContainer = document.getElementById('pageContainer');
-const docBtns = document.querySelectorAll(' .doc-btn');
+const pageContainer = document.getElementById('pgContainer');
+const docBtns = document.querySelectorAll('.doc-btn');
 const docViewer = document.getElementById('docViewer');
 const closeBtn = document.getElementById('closeBtn');
 

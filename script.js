@@ -12,7 +12,7 @@ const portfolioData = {
                 { name: "K0", type: "pdf", url: "essays/K0.pdf" }
             ]
         }
-    }
+    },
 
     art: {
         title: "art",
@@ -26,7 +26,7 @@ const portfolioData = {
                 { name: "K0", type: "pdf", url: "essays/K0.pdf" }
             ]
         }
-    }
+    },
 
     games: {
         title: "games",
@@ -83,6 +83,9 @@ function renderSubsections() {
         btn.addEventListener('click', () => {
             //set new subsection to key
             currentSubsection = key;
+
+            console.log("2. Tab Clicked! New Subsection is:", currentSubsection);
+
             //reset display item
             currentItemIndex = 0;
             //rerender
@@ -128,6 +131,8 @@ function renderEmbed() {
     const items = portfolioData[currentCategory].subsections[currentSubsection];
     const item = items[currentItemIndex];
 
+    console.log("3. Attempting to render item:", item);
+
     //safety so if item doesn't exist, the function doesn't run!
     if (!item) return;
 
@@ -158,6 +163,8 @@ mainCategorySelect.addEventListener('change', (e) => {
     
     //e.target.value gets the string of the box just clicked
     currentCategory = e.target.value;
+
+    console.log("1. Top Dropdown Changed! New Category is:", currentCategory);
 
     mainTitle.textContent = portfolioData[currentCategory].title;
 

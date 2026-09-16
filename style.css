@@ -1,179 +1,100 @@
-:root 
-{
-    --bg-color: #f4f4f6;
-    --card-bg: #ffffff;
-    --text-color: #1f2937;
-    --accent-color: #2563eb;
-}
-
-body.dark-mode 
-{
-    --bg-color: #1f2937;
-    --card-bg: #374151;
-    --text-color: #f4f4f6;
-    --accent-color: #60a5fa;
-}
-
-/* --------------------- core window --------------*/
-body
-{
-    box-sizing: border-box;
-    border: 50px solid black;
-
-    font-family: Times New Roman, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+body {
+    background-color: f4f4f4; 
+    font-family: sans-serif;
     margin: 0;
-    transition: background-color 0.3s, color 0.3s;
+    padding: 0;
 }
 
-
-/* --------------------- card --------------*/
-.card
-  {
-    width: 60vw;
-    height: 70vh; 
-    box-sizing: border-box; 
-
-    /* Add scrollbars inside the card if content overflows on smaller screens */
-    overflow-y: auto;
-
-    border: 10px solid black;
-
-    container-type: size;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  
-    background-color: var(--card-bg);
-
-    padding: 2.5rem;
-    padding-top: 1.5rem;
-
-    border-radius: 5px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-
-    text-align: center;
-}
-
-.btn-container 
-{
-    display: flex;
-    flex-direction: column;
-
-    gap: 10cqh; /* Adjust the gap based on card size */
-
-    width: 100%;        
-    margin-top: auto; 
-    box-sizing: border-box;
-}
-
-.card-btn
-{
-    appearance: none;
-    -webkit-appearance: none;
-
-    height: 15cqh; /* Adjust the height based on card size */
-    
-    font-size: 2.5cqw; /* Adjust the font size based on card size */
+.top-nav-card {
+    width: 90vw;
+    margin: 1.5rem auto 0 auto;
+    border: 8px solid black;
+    background-color: white;
+    padding: 1rem 1.5rem;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 
-    font-family: inherit;
-    margin: 0;
-    width: 100%;
+    box-sizing: border-box;
+}
 
-    text-decoration: none;
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 0.8rem 0.5rem;
-    border-radius: 5px;
+.dropdown {
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+    border: 2px solid black;
     cursor: pointer;
+}
+
+.section-title {
+    text-align: center;
+    margin: 1.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.pg-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.central-card {
+    position: relative;
+
+    width: 65vw;
+    height: 65vh;
+    border: 8px solid black;
+    background-color: white;
     box-sizing: border-box;
-    transition: opacity 0.2s;
+    display: flex;
+    flex-direction: column;
 }
 
-.card-btn:hover
-{
-    opacity: 0.9;
+.card-border-tabs {
+    position: absolute;
+    top: -26px;
+    left: 20px;
+
+    z-index: 2;
+    display: flex;
+    gap: 8px;
 }
 
-/* --------------------- pdf reader card --------------*/
-
-/* outer container */
-.pg-container
-{
+.content-display {
+    flex-grow: 1;
+    padding: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2vw; /* Adjust the gap based on card size */
-    width: 100%;
-    max-width: 95vw;
-    transition: all 0.4s ease-in-out;
+
+    overflow: hidden;
+    background-color: fafafa;
 }
 
-/* left selection card */
-.selection-card
-{
-    transition: width 0.4s ease-in-out;
+.content-display img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
-/* right pdf card */
-.display-card
-{
-    display: none; /* initially hidden */
-    width: 55vw;
-    height: 70vh;
-    padding: 1.5rem;
-    flex-direction: column;
-    position: relative;
-}
-
-/* pdf card content */
-#docViewer
-{
+.content-display iframe {
     width: 100%;
     height: 100%;
     border: none;
-    border-radius: 4px;
-    background-color: white;
 }
 
-/* close reader button */
-.close-btn
-{
-    align-self: flex-end;
-    background: none;
-    border: none;
-    color: var(--text-color);
-    font-family: inherit;
-    font-weight: bold;
-    cursor: pointer;
-    margin-bottom: 0.5rem;
-}
-
-/* --------- active display card------------*/
-
-/* move selection over */
-#pg-container.active .selection-card
-{
-    width: 30vw;
-}
-
-/* show the pdf card */
-#pg-container.active .display-card
-{
+.card-border-bottom {
+    position: absolute;
+    bottom: -24px;
+    right: 20px;
+    background: black;
+    color: white;
+    padding: 6px 12px;
     display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 0 0 4px 4px;
+    z-index: 2;
 }
-
-
-

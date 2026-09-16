@@ -10,19 +10,39 @@
   </head>
   <body>
 
-    <main class="card">
+    <header class="top-nav-card">
 
-      <h1 id = "headline">clay grubbs/konjoue</h1>
-      <p>game scholar and developer</p>
+      <label for="mainCategorySelect">my </label>
+      
+      <select class="dropdown" id="mainCategorySelect">
 
-      <div class="btn-container">
-        <a href="writing.html" class="card-btn">writing</a>
-        <a href="art.html" class="card-btn">art</a>
-        <a href="about/contact.html" class="card-btn">about/contact</a>
-      </div>
+          <option value="writing">writing</option>
+          <option value="art">art</option>
+          <option value="games">games</option>
+      </select>
+    </header>
+
+    <h1 class="section-title" id="mainTitle">writing</h1>
+
+    <main class="pg-container">
+
+      <section class="card central-card">
+        
+        <nav class="card-border-tabs" id="subsectionTabs"></nav>
+
+        <div class="content-display" id="contentDisplay"></div>
+
+        <div class="card-border-bottom">
+          <label for="itemSelect">view </label>
+
+          <select id="itemSelect" class="dropdown"></select>
+        </div>
+
+      </section>
 
     </main>
 
     <script src="script.js"></script>
+    
   </body>
 </html>

@@ -20,8 +20,8 @@ const portfolioData = {
             paintingDrawing: [
                 { name: "FEZ", type: "pdf", url: "essays/Fez.pdf" },
                 { name: "K0", type: "pdf", url: "essays/K0.pdf" }
-            ]
-            sculpture [
+            ],
+            sculpture: [
                 { name: "FEZ", type: "pdf", url: "essays/Fez.pdf" },
                 { name: "K0", type: "pdf", url: "essays/K0.pdf" }
             ]
@@ -34,8 +34,8 @@ const portfolioData = {
             browser: [
                 { name: "FEZ", type: "pdf", url: "essays/Fez.pdf" },
                 { name: "K0", type: "pdf", url: "essays/K0.pdf" }
-            ]
-            download [
+            ],
+            download: [
                 { name: "FEZ", type: "pdf", url: "essays/Fez.pdf" },
                 { name: "K0", type: "pdf", url: "essays/K0.pdf" }
             ]

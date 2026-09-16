@@ -49,11 +49,11 @@ let currentSubsection = "published";
 let currentItemIndex = 0;
 
 //grab items from the html doc
-const mainCategorySelect = document.getElementsById('mainCategorySelect');
-const mainTitle = document.getElementsById('mainTitle');
-const subsectionTabs = document.getElementsById('subsectionTabs');
-const itemSelect = document.getElementsById('itemSelect');
-const contentDisplay = document.getElementsById('contentDisplay');
+const mainCategorySelect = document.getElementById('mainCategorySelect');
+const mainTitle = document.getElementById('mainTitle');
+const subsectionTabs = document.getElementById('subsectionTabs');
+const itemSelect = document.getElementById('itemSelect');
+const contentDisplay = document.getElementById('contentDisplay');
 
 //functions
 
@@ -74,7 +74,7 @@ function renderSubsections() {
         const btn = document.createElement('button');
 
         //if its current subsection then set it active
-        btn.className = 'sub-tab-btn ${key === currentSubsection ? 'active' : ''}';
+        btn.className = `sub-tab-btn ${key === currentSubsection ? 'active' : ''}`;
 
         //set the button text context to the key names
         btn.textContent = key;
@@ -151,7 +151,7 @@ function renderEmbed() {
         const link = document.createElement('a');
         link.href = item.url;
         link.target = "_blank"; //opens a new tab
-        link.textContent = 'click to read ${item.name} ↗'
+        link.textContent = `click to read ${item.name} ↗`
         contentDisplay.appendChild(link);
     }
 }

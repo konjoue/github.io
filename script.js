@@ -107,6 +107,7 @@ function renderBottomDropdown() {
     const items = portfolioData[currentCategory].subsections[currentSubsection];
 
     //loop through items, set vals and inject into html
+    //pulling weird errors here some times when subsection is changed, likely due to a lack of selected item
     items.forEach((item, index) => {
         const option = document.createElement('option');
         option.textContent = item.name;

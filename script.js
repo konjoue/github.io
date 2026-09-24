@@ -1,13 +1,13 @@
 //file organization
 const portfolioData = {
 
-    self: {
+    about: {
         title: "about",
         name: "robert clay grubbs",
         headline: "game scholar and artist",
         bio: "i study video games and make art and think a lot about thinking",
         //avatar: "images/avatar.jpg"
-    }
+    },
 
     writing: {
         title: "writing",
@@ -138,6 +138,12 @@ function renderBottomDropdown() {
 
     //check out the array of items for current subsection
     const items = portfolioData[currentCategory].subsections[currentSubsection];
+
+    //safety check in case subsections lacks items array
+    if (!items) {
+        renderEmbed();
+        return;
+    }
 
     //loop through items, set vals and inject into html
     //pulling weird errors here some times when subsection is changed, likely due to a lack of selected item

@@ -176,7 +176,6 @@ function renderEmbed() {
         aboutCard.className = 'about-card-content';
 
         //modify the exact info
-        ${categoryObj.avatar ? `<img src="${categoryObj.avatar}" alt="Profile" class="profile-pic">` : ''}
         aboutCard.innerHTML = `
              <div class="about-container">
                 ${categoryObj.avatar ? `<img src="${categoryObj.avatar}" alt="Profile" class="profile-pic">` : ''}

@@ -1,5 +1,14 @@
 //file organization
 const portfolioData = {
+
+    self: {
+        title: "about",
+        name: "robert clay grubbs",
+        headline: "game scholar and artist",
+        bio: "i study video games and make art and think a lot about thinking",
+        //avatar: "images/avatar.jpg"
+    }
+
     writing: {
         title: "writing",
         subsections: {
@@ -44,8 +53,8 @@ const portfolioData = {
 };
 
 //current navigation or state vars
-let currentCategory = "writing";
-let currentSubsection = "published";
+let currentCategory = "about";
+let currentSubsection = "";
 let currentItemIndex = 0;
 
 //grab items from the html doc
@@ -54,6 +63,8 @@ const mainTitle = document.getElementById('mainTitle');
 const subsectionTabs = document.getElementById('subsectionTabs');
 const itemSelect = document.getElementById('itemSelect');
 const contentDisplay = document.getElementById('contentDisplay');
+
+const cardBorderBottom = document.querySelector('.card-border-bottom');
 
 //functions
 
@@ -64,6 +75,15 @@ function renderSubsections() {
 
     //get the object of current menu
     const categoryObj = portfolioData[currentCategory];
+
+    //check to see if there's anything to render and if not return
+    if (!categoryObj.subsections) {
+        subsectionTabs.style.display = 'none';
+        return;
+    }
+
+    //otherwise, set subsection tabs visible
+    subsectionTabs.style.display = 'flex';
 
     //get a list of all the arrays inside a subsection
     const subsectionKeys = Object.keys(categoryObj.subsections);
@@ -103,6 +123,19 @@ function renderBottomDropdown() {
     //wipe
     itemSelect.innerHTML = '';
 
+    //get the object of current menu
+    const categoryObj = portfolioData[currentCategory];
+
+    //check to see if there's anything to render and if not return
+    if (!categoryObj.subsections) {
+        cardBorderBottom.style.display = 'none';
+        renderEmbed(); //render about page directly
+        return;
+    }
+
+    //otherwise make visible
+    cardBorderBottom.style.display = 'flex';
+
     //check out the array of items for current subsection
     const items = portfolioData[currentCategory].subsections[currentSubsection];
 
@@ -128,11 +161,31 @@ function renderEmbed() {
     //wipe
     contentDisplay.innerHTML = '';
 
-    //get the right item
+    const categoryObj = portfolioData[currentCategory];
+
+    //special case for about me page
+    if (currentCategory === 'self') {
+        //create display card for about information
+        const aboutCard = document.createElement('div');
+        aboutCard.className = 'about-card-content';
+
+        //modify the exact info
+        //${categoryObj.avatar ? `<img src="${categoryObj.avatar}" alt="Profile" class="profile-pic">` : ''}
+        aboutCard.innerHTML = `
+             <div class="about-container">
+                <h2>${categoryObj.name}</h2>
+                <p class="headline"><strong>${categoryObj.headline}</strong></p>
+                <p class="bio">${categoryObj.bio}</p>
+            </div>
+        `;
+        //add to display
+        contentDisplay.appendChild(aboutCard);
+        return;
+    }
+
+    //get the right item if not about page
     const items = portfolioData[currentCategory].subsections[currentSubsection];
     const item = items[currentItemIndex];
-
-    console.log("3. Attempting to render item:", item);
 
     //safety so if item doesn't exist, the function doesn't run!
     if (!item) return;
@@ -164,8 +217,6 @@ mainCategorySelect.addEventListener('change', (e) => {
     
     //e.target.value gets the string of the box just clicked
     currentCategory = e.target.value;
-
-    console.log("1. Top Dropdown Changed! New Category is:", currentCategory);
 
     mainTitle.textContent = portfolioData[currentCategory].title;
 

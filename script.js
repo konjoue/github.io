@@ -6,7 +6,7 @@ const portfolioData = {
         name: "robert clay grubbs",
         headline: "game scholar and artist",
         bio: "i study video games and make art and think a lot about thinking",
-        //avatar: "images/avatar.jpg"
+        avatar: "images/profile.jpg"
     },
 
     writing: {
@@ -176,9 +176,10 @@ function renderEmbed() {
         aboutCard.className = 'about-card-content';
 
         //modify the exact info
-        //${categoryObj.avatar ? `<img src="${categoryObj.avatar}" alt="Profile" class="profile-pic">` : ''}
+        ${categoryObj.avatar ? `<img src="${categoryObj.avatar}" alt="Profile" class="profile-pic">` : ''}
         aboutCard.innerHTML = `
              <div class="about-container">
+                ${categoryObj.avatar ? `<img src="${categoryObj.avatar}" alt="Profile" class="profile-pic">` : ''}
                 <h2>${categoryObj.name}</h2>
                 <p class="headline"><strong>${categoryObj.headline}</strong></p>
                 <p class="bio">${categoryObj.bio}</p>

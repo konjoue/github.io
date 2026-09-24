@@ -170,7 +170,7 @@ function renderEmbed() {
     const categoryObj = portfolioData[currentCategory];
 
     //special case for about me page
-    if (currentCategory === 'self') {
+    if (currentCategory === 'about') {
         //create display card for about information
         const aboutCard = document.createElement('div');
         aboutCard.className = 'about-card-content';
@@ -190,7 +190,7 @@ function renderEmbed() {
     }
 
     //get the right item if not about page
-    const items = portfolioData[currentCategory].subsections[currentSubsection];
+    const items = portfolioData[currentCategory].subsections?.[currentSubsection];
     const item = items[currentItemIndex];
 
     //safety so if item doesn't exist, the function doesn't run!
@@ -223,6 +223,11 @@ mainCategorySelect.addEventListener('change', (e) => {
     
     //e.target.value gets the string of the box just clicked
     currentCategory = e.target.value;
+
+    //reset subsection for correct indexing
+    const categoryObj = portfolioData[currentCategory];
+    currentSubsection = categoryObj.subsections ? Object.keys(categoryObj.subsections)[0] : "";
+    currentItemIndex = 0;
 
     mainTitle.textContent = portfolioData[currentCategory].title;
 

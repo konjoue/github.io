@@ -222,7 +222,7 @@ function setupNavigation(dropdownId, prevBtnId, nextBtnId) {
     const nextBtn = document.getElementById(nextBtnId);
 
     const shiftSelection = (offset) => {
-        const newIndex = select.selectedIndex + offset;
+        let newIndex = select.selectedIndex + offset;
 
         if (newIndex < 0)
         {

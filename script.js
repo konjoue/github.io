@@ -217,7 +217,7 @@ function renderEmbed() {
 }
 
 function setupNavigation(dropdownID, prevBtnId, nextBtnId) {
-    const select = document.getElementById(dropdownId);
+    const select = document.getElementById(dropdownID);
     const prevBtn = document.getElementById(prevBtnId);
     const nextBtn = document.getElementsbyId(nextBtnId);
 

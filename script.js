@@ -216,6 +216,33 @@ function renderEmbed() {
     }
 }
 
+function setupNavigation(dropdownID, prevBtnId, nextBtnId) {
+    const select = document.getElementById(dropdownId);
+    const prevBtn = document.getElementById(prevBtnId);
+    const nextBtn = document.getElementsbyId(nextBtnId);
+
+    const shiftSelection = (offset) => {
+        const newIndex = dropdown.selectedIndex + offset;
+
+        if (newIndex < 0)
+        {
+            newIndex = dropdown.options.length - 1;
+        }
+        else if (newIndex >= dropdown.options.length)
+        {
+            newIndex = 0;
+        } 
+
+        dropdown.selectedIndex = newIndex;
+        dropdown.dispatchEvent(new Event('change'));
+    }
+
+
+    prevBtn.addEventListener('click', () => shiftSelection(-1));
+    nextBtn.addEventListener('click', () => shiftSelection(1));
+
+};
+
 //event listeners and interactiom
 
 //change based on main category movement
@@ -249,3 +276,6 @@ itemSelect.addEventListener('change', (e) => {
 //init
 renderSubsections();
 renderBottomDropdown();
+
+setupNavigation('mainCategorySelect', 'prevBtnTop', 'nextBtnTop');
+setupNavigation('itemSelect', 'prevBtnBot', 'nextBtnBot');

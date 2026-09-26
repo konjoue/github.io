@@ -8,10 +8,12 @@
 
     <link rel="stylesheet" href="style.css">
   </head>
-  
+
   <body>
 
     <header class="top-nav-card">
+
+      <button id="prevBtnTop" class="nav-arrow">◀</button>
 
       <label for="mainCategorySelect">my </label>
       
@@ -22,6 +24,9 @@
           <option value="art">art</option>
           <option value="games">games</option>
       </select>
+
+      <button id="nextBtnTop" class="nav-arrow">▶</button>
+
     </header>
 
     <h1 class="name-title">konjoue</h1>
@@ -36,9 +41,14 @@
         <div class="content-display" id="contentDisplay"></div>
 
         <div class="card-border-bottom">
-          <label for="itemSelect">view </label>
 
+          <button id="prevBtnBot" class="nav-arrow">◀</button>
+
+          <label for="itemSelect">view </label>
           <select class="dropdown" id="itemSelect"></select>
+
+          <button id="nextBtnBot" class="nav-arrow">▶</button>
+
         </div>
 
       </section>

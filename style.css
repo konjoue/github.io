@@ -146,6 +146,19 @@ body {
     z-index: 2;
 }
 
+.nav-arrow {
+    background: black;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.nav-arrow:hover {
+    background: #333;
+}
+
 .about-container {
     display: flex;
     justify-content: center;

@@ -216,25 +216,25 @@ function renderEmbed() {
     }
 }
 
-function setupNavigation(dropdownID, prevBtnId, nextBtnId) {
-    const select = document.getElementById(dropdownID);
+function setupNavigation(dropdownId, prevBtnId, nextBtnId) {
+    const select = document.getElementById(dropdownId);
     const prevBtn = document.getElementById(prevBtnId);
     const nextBtn = document.getElementById(nextBtnId);
 
     const shiftSelection = (offset) => {
-        const newIndex = dropdown.selectedIndex + offset;
+        const newIndex = select.selectedIndex + offset;
 
         if (newIndex < 0)
         {
-            newIndex = dropdown.options.length - 1;
+            newIndex = select.options.length - 1;
         }
-        else if (newIndex >= dropdown.options.length)
+        else if (newIndex >= select.options.length)
         {
             newIndex = 0;
         } 
 
-        dropdown.selectedIndex = newIndex;
-        dropdown.dispatchEvent(new Event('change'));
+        select.selectedIndex = newIndex;
+        select.dispatchEvent(new Event('change'));
     }
 
 

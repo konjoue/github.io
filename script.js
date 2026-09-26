@@ -219,7 +219,7 @@ function renderEmbed() {
 function setupNavigation(dropdownID, prevBtnId, nextBtnId) {
     const select = document.getElementById(dropdownID);
     const prevBtn = document.getElementById(prevBtnId);
-    const nextBtn = document.getElementbyId(nextBtnId);
+    const nextBtn = document.getElementById(nextBtnId);
 
     const shiftSelection = (offset) => {
         const newIndex = dropdown.selectedIndex + offset;

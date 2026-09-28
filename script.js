@@ -26,13 +26,25 @@ const portfolioData = {
     art: {
         title: "art",
         subsections: {
-            paintingDrawing: [
-                { name: "FEZ", type: "pdf", url: "essays/Fez.pdf" },
-                { name: "K0", type: "pdf", url: "essays/K0.pdf" }
+            visual: [
+                { name: "bloom", type: "image", url: "images/visual/bloom.jpg" },
+                { name: "pianola", type: "image", url: "images/visual/pianola.jpg" },
+                { name: "arcs", type: "image", url: "images/visual/arcs.jpg" },
+                { name: "aggregates", type: "image", url: "images/visual/aggregates.jpg" },
+                { name: "crossed", type: "image", url: "images/visual/crossed.jpg" },
+                { name: "fantasy", type: "image", url: "images/visual/fantasy.jpg" },
+                { name: "watchers", type: "image", url: "images/visual/watchers.jpg" },
+                { name: "proliferation", type: "image", url: "images/visual/proliferation.jpg" },
+                { name: "guidance", type: "image", url: "images/visual/guidance.jpg" },
+                { name: "swarm", type: "image", url: "images/visual/swarm.jpg" },
+                { name: "tension", type: "image", url: "images/visual/tension.jpg" },
+                { name: "phosphors", type: "image", url: "images/visual/phosphors.jpg" },
+                { name: "noise", type: "image", url: "images/visual/noise.jpg" },
+                { name: "daydreaming", type: "image", url: "images/visual/daydreaming.jpg" }
             ],
             sculpture: [
-                { name: "FEZ", type: "pdf", url: "essays/Fez.pdf" },
-                { name: "K0", type: "pdf", url: "essays/K0.pdf" }
+                { name: "to have", type: "image", url: "images/sculpture/to have.jpg" },
+                { name: "complementary", type: "image", url: "images/sculpture/complementary.jpg" }
             ]
         }
     },
@@ -103,8 +115,6 @@ function renderSubsections() {
         btn.addEventListener('click', () => {
             //set new subsection to key
             currentSubsection = key;
-
-            console.log("2. Tab Clicked! New Subsection is:", currentSubsection);
 
             //reset display item
             currentItemIndex = 0;

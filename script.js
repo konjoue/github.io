@@ -11,6 +11,7 @@ const portfolioData = {
 
     writing: {
         title: "writing",
+        overview: "my academic work is typically concerned with formal aspects of narrative regardless of the medium, whilst my public facing work has a bit more variation",
         subsections: {
             published: [
                 { name: "FEZ", type: "pdf", url: "essays/Fez.pdf" },
@@ -25,6 +26,7 @@ const portfolioData = {
 
     art: {
         title: "art",
+        overview: "my paintings and drawings typically rely on fluid based materials, such as sumi-ink and acrylics, whilst my sculpture is constructed with wire and trickline",
         subsections: {
             visual: [
                 { name: "bloom", type: "image", url: "images/visual/bloom.jpg" },
@@ -51,6 +53,7 @@ const portfolioData = {
 
     games: {
         title: "games",
+        overview: "my game-like projects are typically short rule based or non-linear narrative focused experiments",
         subsections: {
             browser: [
                 { name: "FEZ", type: "pdf", url: "essays/Fez.pdf" },
@@ -137,7 +140,7 @@ function renderBottomDropdown() {
     const categoryObj = portfolioData[currentCategory];
 
     //check to see if there's anything to render and if not return
-    if (!categoryObj.subsections) {
+    if (!categoryObj.subsections || currentSubsection === "")
         cardBorderBottom.style.display = 'none';
         renderEmbed(); //render about page directly
         return;
@@ -199,30 +202,39 @@ function renderEmbed() {
         return;
     }
 
-    //get the right item if not about page
-    const items = portfolioData[currentCategory].subsections?.[currentSubsection];
-    const item = items[currentItemIndex];
+    if (currentSubsection != "") {
 
-    //safety so if item doesn't exist, the function doesn't run!
-    if (!item) return;
+        //get the right item if not about page
+        const items = portfolioData[currentCategory].subsections?.[currentSubsection];
+        const item = items[currentItemIndex];
 
-    //if statements to check item type
-    if (item.type === "image") {
-        const img = document.createElement('img');
-        img.src = item.url; //img source path
-        contentDisplay.appendChild(img); //inject
+        //safety so if item doesn't exist, the function doesn't run!
+        if (!item) return;
+
+        //if statements to check item type
+        if (item.type === "image") {
+            const img = document.createElement('img');
+            img.src = item.url; //img source path
+            contentDisplay.appendChild(img); //inject
+        }
+        else if (item.type === "pdf") {
+            const iframe = document.createElement('iframe');
+            iframe.src = item.url;
+            contentDisplay.appendChild(iframe);
+        }
+        else if (item.type === "link") {
+            const link = document.createElement('a');
+            link.href = item.url;
+            link.target = "_blank"; //opens a new tab
+            link.textContent = `click to read ${item.name} ↗`
+            contentDisplay.appendChild(link);
+        }
     }
-    else if (item.type === "pdf") {
-        const iframe = document.createElement('iframe');
-        iframe.src = item.url;
-        contentDisplay.appendChild(iframe);
-    }
-    else if (item.type === "link") {
-        const link = document.createElement('a');
-        link.href = item.url;
-        link.target = "_blank"; //opens a new tab
-        link.textContent = `click to read ${item.name} ↗`
-        contentDisplay.appendChild(link);
+    else {
+        const overviewDiv = document.createElement('div');
+        overviewDiv.className = 'overview-content';
+        overviewDiv.innerHTML = `<p>${categoryObj.overview}</p>`;
+        contentDisplay.appendChild(overviewDiv);
     }
 }
 
@@ -263,7 +275,7 @@ mainCategorySelect.addEventListener('change', (e) => {
 
     //reset subsection for correct indexing
     const categoryObj = portfolioData[currentCategory];
-    currentSubsection = categoryObj.subsections ? Object.keys(categoryObj.subsections)[0] : "";
+    currentSubsection = "";
     currentItemIndex = 0;
 
     mainTitle.textContent = portfolioData[currentCategory].title;

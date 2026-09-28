@@ -140,7 +140,7 @@ function renderBottomDropdown() {
     const categoryObj = portfolioData[currentCategory];
 
     //check to see if there's anything to render and if not return
-    if (!categoryObj.subsections || currentSubsection === "")
+    if (!categoryObj.subsections || currentSubsection === "") {
         cardBorderBottom.style.display = 'none';
         renderEmbed(); //render about page directly
         return;
@@ -230,7 +230,7 @@ function renderEmbed() {
             contentDisplay.appendChild(link);
         }
     }
-    else {
+    else if (currentCategory != "about") {
         const overviewDiv = document.createElement('div');
         overviewDiv.className = 'overview-content';
         overviewDiv.innerHTML = `<p>${categoryObj.overview}</p>`;

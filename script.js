@@ -275,8 +275,8 @@ function renderEmbed() {
             frame.style.height = "100%";
             frame.style.border = "none";
             
-            iframe.style.overflow = 'hidden';
-            iframe.setAttribute('scrolling', 'no');
+            frame.style.overflow = 'hidden';
+            frame.setAttribute('scrolling', 'no');
 
             contentDisplay.appendChild(frame);
         }

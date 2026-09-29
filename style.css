@@ -213,6 +213,10 @@ body {
     gap: 1rem;
     width: 90%;
     margin: 0 auto;
+    padding-bottom: 1rem;
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .list-item-btn {
@@ -231,4 +235,13 @@ body {
     padding: 1rem;
     cursor: pointer;
     font-weight: bold;
+}
+
+.name-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.name-link:hover {
+    text-decoration: underline;
 }

@@ -11,7 +11,7 @@ const portfolioData = {
 
     writing: {
         title: "writing",
-        overview: "my academic work is typically concerned with formal aspects of meaning-making regardless of the medium, whilst my public facing work has a bit more variation",
+        overview: "my academic work is typically concerned with formal aspects of meaning-making, regardless of the medium, whilst my public facing work has a bit more variation",
         subsections: {
             academic: [
                 { name: "FEZ", fullName: "Double-Binds and Anamorphism in FEZ's Reorientation", type: "pdf", url: "documents/essays/FEZ.pdf" },
@@ -215,7 +215,9 @@ function renderEmbed() {
         aboutCard.innerHTML = `
              <div class="about-container">
                 ${categoryObj.avatar ? `<img src="${categoryObj.avatar}" alt="Profile" class="profile-pic">` : ''}
-                <h2>${categoryObj.name}</h2>
+                <a href="documents/Robert Grubbs CV" target="_blank" class="name-link">
+                    <h2>${categoryObj.name}</h2>
+                </a>
                 <p class="headline"><strong>${categoryObj.headline}</strong></p>
                 <p class="bio">${categoryObj.bio}</p>
             </div>

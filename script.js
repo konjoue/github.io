@@ -63,8 +63,9 @@ const portfolioData = {
                 { name: "K0", type: "pdf", url: "essays/K0.pdf" }
             ],
             download: [
-                { name: "FEZ", fullName: "Double-Binds and Anamorphism in FEZ's Reorientation", type: "pdf", url: "essays/Fez.pdf" },
-                { name: "K0", fullName: "Iterative Hermeneutics in Katana ZERO", type: "pdf", url: "essays/K0.pdf" }
+                //just some empty placeholders sorry :(
+                { name: "FEZ", type: "pdf", url: "essays/Fez.pdf" },
+                { name: "K0", type: "pdf", url: "essays/K0.pdf" }
             ]
         }
     }
@@ -121,9 +122,15 @@ function renderSubsections() {
         //check for button click
         btn.addEventListener('click', () => {
             //set new subsection to key
+
+            if (key === "download") {
+                window.open("https://konjoue.itch.io/", "_blank");
+                return;
+            }
+
             currentSubsection = key;
 
-            if (key === "academic" || key === "public" || key === "download") {
+            if (key === "academic" || key === "public") {
                 isFileOpen = false;
             }
             else {

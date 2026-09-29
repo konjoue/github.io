@@ -11,11 +11,18 @@ const portfolioData = {
 
     writing: {
         title: "writing",
-        overview: "my academic work is typically concerned with formal aspects of narrative regardless of the medium, whilst my public facing work has a bit more variation",
+        overview: "my academic work is typically concerned with formal aspects of meaning-making regardless of the medium, whilst my public facing work has a bit more variation",
         subsections: {
             academic: [
-                { name: "FEZ", fullName: "Double-Binds and Anamorphism in FEZ's Reorientation", type: "pdf", url: "essays/Fez.pdf" },
-                { name: "K0", fullName: "Iterative Hermeneutics in Katana ZERO", type: "pdf", url: "essays/K0.pdf" }
+                { name: "FEZ", fullName: "Double-Binds and Anamorphism in FEZ's Reorientation", type: "pdf", url: "documents/essays/FEZ.pdf" },
+                { name: "Surrealism", fullName: "The Poetic Spark: Fortuitous Juxtaposition and Lacanian Metaphor", type: "pdf", url: "documents/essays/Surrealism.pdf" },
+                { name: "MGS2", fullName: "To Dissimulate a Lack: Technomasculinity and Simulation", type: "pdf", url: "documents/essays/MGS2.pdf" },
+                { name: "Mishima", fullName: "Schrader's Mishima: Sublime Masculinity and Transgressive Performance", type: "pdf", url: "documents/essays/Mishima.pdf" },
+                { name: "Norme", fullName: "A Simulated Collapse: Norme's Solitary Confinement Live Stream", type: "pdf", url: "documents/essays/Norme.pdf" },
+                { name: "K0", fullName: "Katana ZERO: Feedback Loops and Iterative Hermeneutics", type: "pdf", url: "documents/essays/K0.pdf" },
+                { name: "Erasure", fullName: "A Dreamed Center: The Illusion of Identity in Erasure", type: "pdf", url: "documents/essays/Erasure.pdf" },
+                { name: "God as Fetish", fullName: "God as Fetish and the Eternal Delight of Jouissance", type: "pdf", url: "documents/essays/God as Fetish.pdf" },
+                { name: "Abstraction", fullName: "Abstraction and Defamiliarization: Tender Buttons and Please, Touch the Artwork", type: "pdf", url: "documents/essays/Abstraction.pdf" }
             ],
             public: [
                 { name: "Seeing", fullName: "Seeing the Body in the World", type: "link", url: "https://tanner.utah.edu/news/seeing-the-body-in-the-world-environmental-storytelling-symposium/" },
@@ -56,7 +63,7 @@ const portfolioData = {
 
     games: {
         title: "games",
-        overview: "my game-like projects are typically short rule based or non-linear narrative focused experiments",
+        overview: "my game-like projects are typically short single-rule based or non-linear narrative focused experiments",
         subsections: {
             browser: [
                 { name: "compulsions", type: "game", url: "games/how to talk to god/index.html" }

@@ -206,3 +206,29 @@ body {
     line-height: min(10vw, 6rem);
     text-align: center;
 }
+
+.item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.list-item-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    
+    pointer-events: auto;
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    font-size: min(1.2rem, 4vw);
+    border: 2px solid white;
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}

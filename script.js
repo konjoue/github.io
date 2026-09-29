@@ -18,8 +18,11 @@ const portfolioData = {
                 { name: "K0", fullName: "Iterative Hermeneutics in Katana ZERO", type: "pdf", url: "essays/K0.pdf" }
             ],
             public: [
-                { name: "FEZ", fullName: "Double-Binds and Anamorphism in FEZ's Reorientation", type: "pdf", url: "essays/Fez.pdf" },
-                { name: "K0", fullName: "Iterative Hermeneutics in Katana ZERO", type: "pdf", url: "essays/K0.pdf" }
+                { name: "Seeing", fullName: "Seeing the Body in the World", type: "link", url: "https://tanner.utah.edu/news/seeing-the-body-in-the-world-environmental-storytelling-symposium/" },
+                { name: "Backpack", fullName: "An Ode to the Everyday Backpack", type: "link", url: "https://www.deseret.com/education/2024/09/05/ode-to-backpacks/" },
+                { name: "Dams", fullName: "Water Works", type: "link", url: "https://www.deseret.com/magazine/2024/06/15/water-works/" },
+                { name: "Thunderstruck", fullName: "An Ode to Night Games", type: "link", url: "https://www.deseret.com/magazine/2024/07/15/ode-to-night-games/" },
+                { name: "Games", fullName: "The Case for Video Games as Literature", type: "link", url: "https://www.deseret.com/2023/12/14/23963033/video-gaming-literature/" }
             ]
         }
     },
@@ -224,10 +227,16 @@ function renderEmbed() {
                 const link = document.createElement('button');
                 link.className = 'list-item-btn';
                 link.textContent = item.fullName || item.name; 
+
                 link.onclick = () => {
-                    currentItemIndex = index;
-                    isFileOpen = true;
-                    renderBottomDropdown();
+                    if (item.type === "link") {
+                        window.open(item.url, '_blank');
+                    }
+                    else {
+                        currentItemIndex = index;
+                        isFileOpen = true;
+                        renderBottomDropdown();
+                    }
                 };
                 listContainer.appendChild(link);
             });
@@ -251,13 +260,6 @@ function renderEmbed() {
             const iframe = document.createElement('iframe');
             iframe.src = item.url;
             contentDisplay.appendChild(iframe);
-        }
-        else if (item.type === "link") {
-            const link = document.createElement('a');
-            link.href = item.url;
-            link.target = "_blank"; //opens a new tab
-            link.textContent = `click to read ${item.name} ↗`
-            contentDisplay.appendChild(link);
         }
     }
     else if (currentCategory != "about") {

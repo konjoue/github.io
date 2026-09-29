@@ -14,12 +14,12 @@ const portfolioData = {
         overview: "my academic work is typically concerned with formal aspects of narrative regardless of the medium, whilst my public facing work has a bit more variation",
         subsections: {
             academic: [
-                { name: "FEZ", type: "pdf", url: "essays/Fez.pdf" },
-                { name: "K0", type: "pdf", url: "essays/K0.pdf" }
+                { name: "FEZ", fullName: "Double-Binds and Anamorphism in FEZ's Reorientation", type: "pdf", url: "essays/Fez.pdf" },
+                { name: "K0", fullName: "Iterative Hermeneutics in Katana ZERO", type: "pdf", url: "essays/K0.pdf" }
             ],
             public: [
-                { name: "FEZ", type: "pdf", url: "essays/Fez.pdf" },
-                { name: "K0", type: "pdf", url: "essays/K0.pdf" }
+                { name: "FEZ", fullName: "Double-Binds and Anamorphism in FEZ's Reorientation", type: "pdf", url: "essays/Fez.pdf" },
+                { name: "K0", fullName: "Iterative Hermeneutics in Katana ZERO", type: "pdf", url: "essays/K0.pdf" }
             ]
         }
     },
@@ -60,8 +60,8 @@ const portfolioData = {
                 { name: "K0", type: "pdf", url: "essays/K0.pdf" }
             ],
             download: [
-                { name: "FEZ", type: "pdf", url: "essays/Fez.pdf" },
-                { name: "K0", type: "pdf", url: "essays/K0.pdf" }
+                { name: "FEZ", fullName: "Double-Binds and Anamorphism in FEZ's Reorientation", type: "pdf", url: "essays/Fez.pdf" },
+                { name: "K0", fullName: "Iterative Hermeneutics in Katana ZERO", type: "pdf", url: "essays/K0.pdf" }
             ]
         }
     }
@@ -71,6 +71,7 @@ const portfolioData = {
 let currentCategory = "about";
 let currentSubsection = "";
 let currentItemIndex = 0;
+let isFileOpen = false;
 
 //grab items from the html doc
 const mainCategorySelect = document.getElementById('mainCategorySelect');
@@ -119,6 +120,12 @@ function renderSubsections() {
             //set new subsection to key
             currentSubsection = key;
 
+            if (key === "academic" || key === "public" || key === "download") {
+                isFileOpen = false;
+            }
+            else {
+                isFileOpen = true;
+            }
             //reset display item
             currentItemIndex = 0;
             //rerender
@@ -140,7 +147,7 @@ function renderBottomDropdown() {
     const categoryObj = portfolioData[currentCategory];
 
     //check to see if there's anything to render and if not return
-    if (!categoryObj.subsections || currentSubsection === "") {
+    if (!categoryObj.subsections || currentSubsection === "" || !isFileOpen) {
         cardBorderBottom.style.display = 'none';
         renderEmbed(); //render about page directly
         return;
@@ -206,6 +213,29 @@ function renderEmbed() {
 
         //get the right item if not about page
         const items = portfolioData[currentCategory].subsections?.[currentSubsection];
+
+        //if need mini-directory, open it
+        if (!isFileOpen)
+        {
+            const listContainer = document.createElement('div');
+            listContainer.className = 'item-list';
+
+            items.forEach((item, index) => {
+                const link = document.createElement('button');
+                link.className = 'list-item-btn';
+                link.textContent = item.fullName || item.name; 
+                link.onclick = () => {
+                    currentItemIndex = index;
+                    isFileOpen = true;
+                    renderBottomDropdown();
+                };
+                listContainer.appendChild(link);
+            });
+            contentDisplay.appendChild(listContainer);
+            return;
+        }
+
+
         const item = items[currentItemIndex];
 
         //safety so if item doesn't exist, the function doesn't run!
@@ -277,6 +307,8 @@ mainCategorySelect.addEventListener('change', (e) => {
     const categoryObj = portfolioData[currentCategory];
     currentSubsection = "";
     currentItemIndex = 0;
+
+    isFileOpen = false;
 
     mainTitle.textContent = portfolioData[currentCategory].title;
 

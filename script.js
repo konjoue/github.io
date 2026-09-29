@@ -270,12 +270,13 @@ function renderEmbed() {
         else if (item.type === "game") {
             const frame = document.createElement('iframe');
             frame.src = item.url;
-            
+
             frame.style.width = "100%";
             frame.style.height = "100%";
             frame.style.border = "none";
-
-            frame.allow = "fullscreen";
+            
+            iframe.style.overflow = 'hidden';
+            iframe.setAttribute('scrolling', 'no');
 
             contentDisplay.appendChild(frame);
         }

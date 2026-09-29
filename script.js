@@ -59,8 +59,7 @@ const portfolioData = {
         overview: "my game-like projects are typically short rule based or non-linear narrative focused experiments",
         subsections: {
             browser: [
-                { name: "FEZ", type: "pdf", url: "essays/Fez.pdf" },
-                { name: "K0", type: "pdf", url: "essays/K0.pdf" }
+                { name: "compulsions", type: "game", url: "games/how to talk to god/index.html" }
             ],
             download: [
                 //just some empty placeholders sorry :(
@@ -267,6 +266,18 @@ function renderEmbed() {
             const iframe = document.createElement('iframe');
             iframe.src = item.url;
             contentDisplay.appendChild(iframe);
+        }
+        else if (item.type === "game") {
+            const frame = document.createElement('iframe');
+            frame.src = item.url;
+            
+            frame.style.width = "100%";
+            frame.style.height = "100%";
+            frame.style.border = "none";
+
+            frame.allow = "fullscreen";
+
+            contentDisplay.appendChild(frame);
         }
     }
     else if (currentCategory != "about") {

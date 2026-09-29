@@ -11,7 +11,7 @@ const portfolioData = {
 
     writing: {
         title: "writing",
-        overview: "my academic work is typically concerned with formal aspects of meaning-making, regardless of the medium, whilst my public facing work has a bit more variation",
+        overview: "my academic work is typically concerned with formal aspects of meaning-making, whilst my public facing work has a bit more variation",
         subsections: {
             academic: [
                 { name: "FEZ", fullName: "Double-Binds and Anamorphism in FEZ's Reorientation", type: "pdf", url: "documents/essays/FEZ.pdf" },

@@ -215,7 +215,7 @@ function renderEmbed() {
         aboutCard.innerHTML = `
              <div class="about-container">
                 ${categoryObj.avatar ? `<img src="${categoryObj.avatar}" alt="Profile" class="profile-pic">` : ''}
-                <a href="documents/Robert Grubbs CV" target="_blank" class="name-link">
+                <a href="documents/RCG CV.pdf" target="_blank" class="name-link">
                     <h2>${categoryObj.name}</h2>
                 </a>
                 <p class="headline"><strong>${categoryObj.headline}</strong></p>

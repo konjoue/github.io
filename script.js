@@ -13,11 +13,11 @@ const portfolioData = {
         title: "writing",
         overview: "my academic work is typically concerned with formal aspects of narrative regardless of the medium, whilst my public facing work has a bit more variation",
         subsections: {
-            published: [
+            academic: [
                 { name: "FEZ", type: "pdf", url: "essays/Fez.pdf" },
                 { name: "K0", type: "pdf", url: "essays/K0.pdf" }
             ],
-            unpublished: [
+            public: [
                 { name: "FEZ", type: "pdf", url: "essays/Fez.pdf" },
                 { name: "K0", type: "pdf", url: "essays/K0.pdf" }
             ]

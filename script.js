@@ -357,7 +357,7 @@ itemSelect.addEventListener('change', (e) => {
     renderEmbed();
 });
 
-//init
+//init :)
 renderSubsections();
 renderBottomDropdown();
 

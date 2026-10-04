@@ -66,7 +66,8 @@ const portfolioData = {
         overview: "my game-like projects are typically short single-rule based or non-linear narrative focused experiments",
         subsections: {
             browser: [
-                { name: "compulsions", type: "game", url: "games/how to talk to god/index.html" }
+                { name: "compulsions", type: "game", url: "games/how to talk to god/index.html" },
+                { name: "stickysticky", type: "game", url: "games/stickysticky/index.html" }
             ],
             download: [
                 //just some empty placeholders sorry :(
